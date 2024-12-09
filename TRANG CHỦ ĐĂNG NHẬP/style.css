@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+/* Nhập phông chữ "Open Sans" từ Google Fonts để sử dụng cho toàn bộ trang web */
+
+* {
+  margin: 0; /* Xóa toàn bộ khoảng cách mặc định của các phần tử */
+  padding: 0; /* Xóa toàn bộ lề mặc định của các phần tử */
+  box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước phần tử */
+  font-family: "Times New Roman", serif; /* Thiết lập phông chữ mặc định là Times New Roman */
+}
+
+body {
+  display: flex; /* Sử dụng Flexbox để căn chỉnh nội dung */
+  align-items: center; /* Căn giữa nội dung theo trục dọc */
+  justify-content: center; /* Căn giữa nội dung theo trục ngang */
+  min-height: 100vh; /* Chiều cao tối thiểu của thân trang là 100% chiều cao màn hình */
+  width: 100%; /* Chiều rộng của thân trang là 100% */
+  padding: 0 10px; /* Thêm khoảng cách bên trong nhỏ để tránh sát mép */
+  position: relative; /* Thêm position relative để video có thể định vị tuyệt đối */
+  overflow: hidden; /* Ngăn không cho video tràn ra ngoài */
+}
+#backgroundVideo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw; /* Phủ chiều rộng màn hình */
+  height: 100vh; /* Phủ chiều cao màn hình */
+  object-fit: contain; /* Đảm bảo giữ nguyên tỷ lệ của video */
+  z-index: -1; /* Đưa video xuống dưới nền */
+  background-color: black; /* Màu nền đen để lấp vùng trống */
+}
+
+
+
+
+.wrapper {
+  width: 400px; /* Chiều rộng của khung nội dung */
+  border-radius: 8px; /* Bo tròn các góc của khung */
+  padding: 30px; /* Thêm khoảng cách bên trong khung */
+  text-align: center; /* Căn giữa toàn bộ văn bản */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Viền mờ màu trắng nhạt */
+  backdrop-filter: blur(8px); /* Hiệu ứng làm mờ nền phía sau */
+  -webkit-backdrop-filter: blur(8px); /* Hiệu ứng làm mờ cho trình duyệt Webkit */
+}
+
+form {
+  display: flex; /* Sử dụng Flexbox để sắp xếp nội dung */
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+}
+
+h2 {
+  font-size: 2rem; /* Kích thước chữ lớn cho tiêu đề */
+  margin-bottom: 20px; /* Khoảng cách bên dưới tiêu đề */
+  color: #fff; /* Màu trắng cho chữ */
+}
+
+.input-field {
+  position: relative; /* Định vị tương đối để dễ đặt nhãn và input */
+  border-bottom: 2px solid #ccc; /* Viền dưới màu xám nhạt */
+  margin: 15px 0; /* Khoảng cách trên và dưới giữa các trường nhập liệu */
+}
+
+.input-field label {
+  position: absolute; /* Định vị nhãn bên trong input */
+  top: 50%; /* Vị trí từ trên xuống là 50% chiều cao của input */
+  left: 0; /* Canh trái nhãn */
+  transform: translateY(-50%); /* Di chuyển nhãn chính giữa chiều cao */
+  color: #fff; /* Màu trắng cho nhãn */
+  font-size: 16px; /* Kích thước chữ mặc định */
+  pointer-events: none; /* Ngăn nhãn bị nhấn hoặc chọn */
+  transition: 0.15s ease; /* Hiệu ứng chuyển động mượt mà */
+}
+
+.input-field input {
+  width: 100%; /* Chiều rộng của input bằng khung chứa */
+  height: 40px; /* Chiều cao của input */
+  background: transparent; /* Nền trong suốt */
+  border: none; /* Không có viền */
+  outline: none; /* Không có đường viền khi được chọn */
+  font-size: 16px; /* Kích thước chữ */
+  color: #fff; /* Màu chữ trắng */
+}
+
+.input-field input:focus~label,
+.input-field input:valid~label {
+  font-size: 0.8rem; /* Thu nhỏ kích thước nhãn */
+  top: 10px; /* Đẩy nhãn lên trên input */
+  transform: translateY(-120%); /* Điều chỉnh nhãn để trông gọn gàng */
+}
+
+.forget {
+  display: flex; /* Sử dụng Flexbox để căn chỉnh */
+  align-items: center; /* Căn giữa nội dung theo trục dọc */
+  justify-content: space-between; /* Phân phối khoảng cách giữa hai phần tử */
+  margin: 25px 0 35px 0; /* Khoảng cách trên và dưới */
+  color: #fff; /* Màu chữ trắng */
+}
+
+#remember {
+  accent-color: #fff; /* Màu sắc tùy chỉnh cho checkbox khi được chọn */
+}
+
+.forget label {
+  display: flex; /* Hiển thị nhãn với Flexbox */
+  align-items: center; /* Căn giữa nội dung của nhãn */
+}
+
+.forget label p {
+  margin-left: 8px; /* Khoảng cách giữa checkbox và chữ "Remember me" */
+}
+
+.wrapper a {
+  color: #efefef; /* Màu chữ của liên kết là trắng nhạt */
+  text-decoration: none; /* Bỏ gạch chân cho liên kết */
+}
+
+.wrapper a:hover {
+  text-decoration: underline; /* Hiển thị gạch chân khi rê chuột vào liên kết */
+}
+
+button {
+  background: #fff; /* Nền trắng cho nút */
+  color: #000; /* Màu chữ đen */
+  font-weight: 600; /* Chữ đậm */
+  border: none; /* Bỏ viền nút */
+  padding: 12px 20px; /* Khoảng cách bên trong nút */
+  cursor: pointer; /* Con trỏ chuyển sang dạng trỏ tay khi rê vào nút */
+  border-radius: 3px; /* Bo tròn góc nút */
+  font-size: 16px; /* Kích thước chữ của nút */
+  border: 2px solid transparent; /* Viền trong suốt ban đầu */
+  transition: 0.3s ease; /* Hiệu ứng mượt khi thay đổi trạng thái */
+}
+
+button:hover {
+  color: #fff; /* Đổi màu chữ thành trắng khi rê chuột */
+  border-color: #fff; /* Viền chuyển thành màu trắng */
+  background: rgba(255, 255, 255, 0.15); /* Nền mờ khi rê chuột */
+}
+
+.register {
+  text-align: center; /* Căn giữa nội dung */
+  margin-top: 30px; /* Khoảng cách phía trên */
+  color: #fff; /* Màu chữ trắng */
+}

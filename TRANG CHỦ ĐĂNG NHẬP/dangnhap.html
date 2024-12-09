@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Khai báo loại tài liệu là HTML5 -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- Đặt mã hóa ký tự của trang web là UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Thiết lập viewport để trang web hiển thị tốt trên các thiết bị di động -->
+  <title>Trường THPT Châu Phong | Đăng Nhập</title>
+  <!-- Tiêu đề của trang web, hiển thị trên tab trình duyệt -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Liên kết đến tệp CSS bên ngoài để định dạng trang web -->
+</head>
+  <!-- Thêm video nền -->
+  <video autoplay muted loop id="backgroundVideo">
+    <source src="./videonen.mp4" type="video/mp4">
+    Trình duyệt của bạn không hỗ trợ video HTML5.
+  </video>
+<body>
+
+
+  <div class="wrapper">
+    <!-- Bao bọc toàn bộ form trong một khung div để dễ định dạng -->
+    <form action="../index.html">
+      <!-- Tạo một biểu mẫu; thuộc tính "action" dùng để chỉ định URL nhận dữ liệu -->
+      <h2>Chào Mừng Đến Trường Của Chúng Tôi</h2>
+      <!-- Tiêu đề chào mừng trên trang -->
+      
+      <div class="input-field">
+        <!-- Khung nhập liệu cho tên hoặc tài khoản -->
+        <input type="text" required>
+        <!-- Tạo trường nhập liệu kiểu văn bản. Thuộc tính "required" yêu cầu phải điền trước khi gửi -->
+        <label>Vui Lòng Nhập Tên Hoặc Tên Tài Khoản</label>
+        <!-- Nhãn cho trường nhập -->
+      </div>
+
+      <div class="input-field">
+        <!-- Khung nhập liệu cho mật khẩu -->
+        <input type="password" required>
+        <!-- Trường nhập liệu mật khẩu. Ký tự nhập vào sẽ được ẩn -->
+        <label>Vui Lòng Nhập Mật Khẩu</label>
+        <!-- Nhãn cho trường mật khẩu -->
+      </div>
+
+      <div class="forget">
+        <!-- Phần tùy chọn và liên kết -->
+        <label for="remember">
+          <!-- Nhãn cho checkbox "Remember me" -->
+          <input type="checkbox" id="remember">
+          <!-- Checkbox để người dùng chọn nhớ thông tin đăng nhập -->
+          <p>Nhớ Mật Khẩu</p>
+          <!-- Văn bản đi kèm với checkbox -->
+        </label>
+        <a href="#">Quên mật khẩu ?</a>
+        <!-- Liên kết để lấy lại mật khẩu, hiện tại chưa chỉ định URL -->
+      </div>
+
+      <button type="submit">Đăng Nhập</button>
+      <!-- Nút gửi biểu mẫu để đăng nhập -->
+      <div class="register">
+        <!-- Phần điều hướng đến trang đăng ký -->
+        <p>Bạn chưa có tài khoản? <a href="index.html">Đăng Ký</a></p>
+        <!-- Liên kết dẫn đến trang đăng ký (index.html) -->
+      </div>
+    </form>
+  </div>
+
+  <style>
+    #backgroundVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      object-fit: cover;
+    }
+  </style>
+</body>
+</html>

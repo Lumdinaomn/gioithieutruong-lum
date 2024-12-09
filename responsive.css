@@ -1,0 +1,64 @@
+@media screen and (max-width:768px) {
+    /* Các đoạn CSS chỉ áp dụng khi chiều rộng màn hình nhỏ hơn hoặc bằng 768px */
+
+    p {
+        font-size:14px;
+        /* Giảm kích thước chữ trong các đoạn văn xuống 14px để phù hợp màn hình nhỏ */
+    }
+
+    #about .container, #skills .container, #projects .container, #contact .container {
+        padding:0px 50px;
+        /* Giảm khoảng cách padding hai bên để nội dung gọn hơn */
+    }
+
+    .intro .btn-danger {
+        width: 150px;
+        height: 40px;
+        /* Giảm kích thước nút "Danger" để phù hợp với màn hình nhỏ */
+    }
+
+    #about .box-left {
+        width: 70%;
+        /* Hình ảnh trong phần "about" chiếm 70% chiều rộng để trông cân đối hơn */
+    }
+
+    #skills .skill {
+        width:100%;
+        /* Các khung kỹ năng (skill) chiếm 100% chiều rộng màn hình */
+    }
+
+    header .menu {
+        display: none;
+        /* Ẩn menu chính (dạng desktop) trên màn hình nhỏ */
+    }
+
+    header .open-menu {
+        display: block;
+        /* Hiển thị biểu tượng menu (dành cho responsive) */
+    }
+}
+
+@media screen and (max-width:600px) {
+    /* Các đoạn CSS chỉ áp dụng khi chiều rộng màn hình nhỏ hơn hoặc bằng 600px */
+
+    #about .container, #skills .container, #projects .container, #contact .container {
+        padding:0px 20px;
+        /* Giảm khoảng cách padding hai bên xuống 20px để tiết kiệm không gian */
+    }
+
+    #about .box-left {
+        width:100%;
+        text-align: center;
+        /* Hình ảnh trong phần "about" chiếm 100% chiều rộng và được căn giữa */
+    }
+
+    #about .info {
+        grid-template-columns: repeat(1,1fr);
+        /* Chuyển layout thông tin "about" sang 1 cột thay vì 2 cột */
+    }
+
+    #projects .projects {
+        grid-template-columns: repeat(1,1fr);
+        /* Chuyển layout các project sang 1 cột để phù hợp màn hình nhỏ */
+    }
+}

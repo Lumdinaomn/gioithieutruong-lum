@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- Thiết lập mã hóa ký tự UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Đảm bảo tương thích với các trình duyệt cũ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tối ưu hóa hiển thị trên thiết bị di động -->
+    <title>Giới Thiệu Trường THPT Châu Phong</title> <!-- Tiêu đề của trang -->
+    <link rel="stylesheet" href="./style.css"> <!-- Liên kết tệp CSS chính -->
+    <link rel="stylesheet" href="./responsive.css"> <!-- Liên kết tệp CSS responsive -->
+</head>
+
+<body id="home"> <!-- Phần nội dung chính của trang -->
+    <!-- Thêm nhạc nền tự động phát -->
+    <audio id="backgroundMusic" autoplay loop controls>
+        <source src="./images/nhacnen.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phát audio.
+    </audio>
+
+    <script>
+        window.onload = function() {
+            var audio = document.getElementById("backgroundMusic");
+            audio.volume = 0.3; // Đặt âm lượng là 50%
+            audio.play().catch(function(error) {
+                console.log("Không thể tự động phát nhạc: " + error);
+            });
+            
+            // Thêm sự kiện click để phát nhạc khi người dùng tương tác
+            document.addEventListener('click', function() {
+                audio.play();
+            }, { once: true });
+        }
+    </script>
+
+    <header> <!-- Phần tiêu đề của trang -->
+        <div class="container"> <!-- Bố cục chứa nội dung header -->
+            <nav> <!-- Thanh điều hướng -->
+                <div class="logo"> <!-- Logo của trang -->
+                    <a href="">
+                        <img src="./images/logonho.png" alt=""> <!-- Ảnh logo nhỏ -->
+                    </a>
+                </div>
+
+                <ul class="menu"> <!-- Menu điều hướng chính -->
+                    <li class="item"><a href="./lichsuhinhthanh/lsht1.html">Lịch Sử Hình Thành</a></li>
+                    <li class="item"><a href="./cosovatchat/csvc1.html">Cở Sở Vật Chất</a></li>
+                    <li class="item"><a href="./hocphi/hdcm1.html">Học phí của Trường</a></li>
+                    <li class="item"><a href="./hoatdongvasukien/hdvsk1.html">Hoạt Động - Sự Kiện</a></li>
+                    <li class="item"><a href="./cachoatdongnoibat/csknb1.html">Các Sự Kiện Nổi Bật</a></li>
+                </ul>
+
+                <!-- Menu dành cho màn hình nhỏ -->
+                <div class="open-menu"> <!-- Nút mở menu trên màn hình nhỏ -->
+                    <ion-icon name="menu-outline"></ion-icon> <!-- Icon menu -->
+                </div>
+
+                <ul class="responsive-menu"> <!-- Menu dành cho màn hình nhỏ -->
+                    <div class="close-responsive-menu"> <!-- Nút đóng menu -->
+                        <ion-icon name="close-outline"></ion-icon> <!-- Icon đóng menu -->
+                    </div>
+                    <li class="item"><a href="./lsht/lsht1.html">Lịch Sử Hình Thành</a></li>
+                    <li class="item"><a href="./csvl/csvc1.html">Cở Sở Vật Chất</a></li>
+                    <li class="item"><a href="./hdcm/hdcm1.html">Học phí của Trường</a></li>
+                    <li class="item"><a href="./hdvsk/hdvsk1.html">Hoạt Động - Sự Kiện</a></li>
+                    <li class="item"><a href="./csknb/csknb1.html">Các Sự Kiện Nổi Bật</a></li>
+                </ul>
+            </nav>
+
+            <div class="intro"> <!-- Phần giới thiệu -->
+                <div class="avatar"> <!-- Hình đại diện -->
+                    <img src="./images/logo1.png" alt=""> <!-- Ảnh logo chính -->
+                </div>
+                <h1 class="name">Trường THPT Châu Phong</h1> <!-- Tiêu đề giới thiệu -->
+                <p class="desc">Châu Phong High School / Trường THPT Châu Phong</p> <!-- Mô tả ngắn -->
+                <button class="btn-danger">WELCOME TO</button> <!-- Nút "Hire me" -->
+            </div>
+        </div>
+    </header>
+
+    <section id="about"> <!-- Phần "About" -->
+        <div class="container"> <!-- Bố cục chứa nội dung -->
+            <h2 class="section-title">Đánh Giá Trường THPT Châu Phong - An Giang</h2> <!-- Tiêu đề phần -->
+            <p class="desc">
+                Trường THPT Châu Phong - An Giang đã có rất nhiều thành tích nổi bật trong nhiều năm qua. Dưới đây là bài Đánh Giá Trường THPT Châu Phong có tốt không cho bạn tham khảo.
+                Trường THPT Châu Phong luôn nằm trong top các trường cấp 3 chất lượng tại tỉnh An Giang. Dưới đây là bài đánh giá Trường THPT Châu Phong có tốt không công tâm để phụ huynh có cái nhìn toàn diện nhất.
+            </p> <!-- Mô tả nội dung đánh giá -->
+            <div class="info"> <!-- Thông tin chi tiết -->
+                <div class="box-left"> <!-- Cột bên trái -->
+                    <img src="./images/hinhduoi.jpg" alt=""> <!-- Ảnh minh họa -->
+                </div>
+                <div class="box-right"> <!-- Cột bên phải -->
+                    <h3>Hello</h3> <!-- Tiêu đề nhỏ -->
+                    <h2>Xin Chào ! <span>welcome to THPT Châu Phong</span></h2> <!-- Tên giới thiệu -->
+                    <p>  
+                        Trong năm qua, thầy và trò trường THPT Châu Phương đã có nhiều cố gắng trong công tác giảng dạy, hoàn thành xuất sắc nhiệm vụ xét tốt nghiệp THPT giai đoạn 2021-2023    với tỷ lệ đậu 100%.  Tỷ lệ tốt nghiệp THPT hàng năm ngày càng có nhiều học sinh trúng tuyển vào các trường đại học, cao đẳng, trường xếp trong tốp dẫn đầu về học lực của Bộ Giáo dục và Đào tạo.
+
+Việc tuyển chọn, đổi mới và bồi dưỡng giáo viên xuất sắc, thiết kế các khóa học e-learning, hướng dẫn nghiên cứu khoa học cho học sinh, bồi dưỡng HSG tiếp tục được thực hiện thường xuyên hàng năm. 
+                    </p> <!-- Đoạn văn mô tả -->
+                    <button class="btn-danger">Contact</button> <!-- Nút "Contact" -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần "Skills" -->
+    <section id="skills">
+        <div class="container"> <!-- Bố cục chứa nội dung -->
+            <div class="section-title">Chất Lượng Đào Tạo</div> <!-- Tiêu đề phần -->
+            <ul class="list-skills"> <!-- Danh sách kỹ năng -->
+                <li class="skill"> <!-- Kỹ năng HTML -->
+                    <h3>Cơ Sở Vật Chất</h3>
+                    <div class="process-bar"> <!-- Thanh tiến trình -->
+                        <div class="process"></div> <!-- Phần thanh tiến trình được lấp đầy -->
+                    </div>
+                </li>
+
+                <li class="skill"> <!-- Kỹ năng CSS -->
+                    <h3>Giáo Viên - Nhân Viên</h3>
+                    <div class="process-bar">
+                        <div class="process"></div>
+                    </div>
+                </li>
+
+                <li class="skill"> <!-- Kỹ năng Javascript -->
+                    <h3>Khả Năng Giảng Dạy</h3>
+                    <div class="process-bar">
+                        <div class="process"></div>
+                    </div>
+                </li>
+
+                <li class="skill"> <!-- Kỹ năng Node.js -->
+                    <h3>Hoạt Động Vui Chơi Giải Trí</h3>
+                    <div class="process-bar">
+                        <div class="process"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Phần "Projects" -->
+    <section id="projects">
+        <div class="container"> <!-- Bố cục chứa nội dung -->
+            <h2 class="section-title">Với Tất Cả Học Sinh Của Trường Thì Đây là Ngôi Trường Rất Đáng Quý</h2> <!-- Tiêu đề phần -->
+            <ul class="projects"> <!-- Danh sách các dự án -->
+                <li class="item"> <!-- Một dự án -->
+                    <div class="image"> <!-- Hình ảnh của dự án -->
+                        <img src="./images/vuichoi1.jpg" alt="">
+                    </div>
+                    <h2 class="name">Rất Nhiều Hoạt Động Vui Chơi Giải Trí</h2> <!-- Tên dự án -->
+                    <p class="desc"> <!-- Mô tả dự án -->
+                        Các hoạt động vui chơi giải trí của trường tôi luôn mang đến những kỷ niệm đáng nhớ và niềm vui trọn vẹn cho tất cả học sinh. Từ những buổi hội thao sôi động với các trò chơi thể thao đầy thách thức như kéo co, chạy tiếp sức, đến những ngày hội văn hóa với các tiết mục văn nghệ đặc sắc, mọi người đều hòa mình vào không khí sôi nổi, đoàn kết. Đặc biệt, hội trại xuân là dịp để chúng tôi cùng nhau trang trí lều trại, nấu ăn và tham gia các trò chơi tập thể, mang đến những tràng cười không ngớt. Những khoảnh khắc ấy không chỉ giúp chúng tôi thư giãn sau những giờ học căng thẳng mà còn là nơi lưu giữ những kỷ niệm tuổi học trò đẹp đẽ nhất. Chính vì thế, mỗi sự kiện đều để lại trong lòng chúng tôi những ấn tượng không thể nào quên.
+                    </p>
+                    <button class="btn-danger">See more</button> <!-- Nút xem thêm -->
+                </li>
+                <li class="item"> <!-- Một dự án khác -->
+                    <div class="image">
+                        <img src="./images/vuichoi2.jpg" alt="">
+                    </div>
+                    <h2 class="name">Và Nhiều Sự Kiện Tạo Động Lực Học Tập</h2>
+                    <p class="desc">
+                        Các hoạt động tạo động lực học như chương trình Truyền Lửa tại trường tôi thật sự ý nghĩa và đầy cảm hứng. Đây là những buổi giao lưu đặc biệt, nơi chúng tôi được gặp gỡ những diễn giả thành công, những thầy cô và cựu học sinh chia sẻ câu chuyện vượt khó, hành trình chinh phục tri thức và ước mơ. Với những bài học quý giá cùng sự khích lệ chân thành, chương trình đã khơi dậy trong mỗi học sinh tinh thần quyết tâm, ý chí vươn lên trong học tập. Không chỉ vậy, các trò chơi trí tuệ và hoạt động nhóm trong chương trình còn giúp chúng tôi hiểu rõ giá trị của sự đoàn kết và nỗ lực tập thể. Những buổi Truyền Lửa ấy đã tiếp thêm động lực mạnh mẽ, giúp chúng tôi tự tin hơn trên hành trình chinh phục tri thức và xây dựng tương lai.
+                    </p>
+                    <button class="btn-danger">See more</button> <!-- Nút xem thêm -->
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Phần "Contact" -->
+    <section id="contact">
+        <div class="container"> <!-- Bố cục chứa nội dung -->
+            <h2 class="section-title">Contact</h2> <!-- Tiêu đề phần -->
+            <form action="" class="form-contact"> <!-- Biểu mẫu liên hệ -->
+                <input type="text" placeholder="Enter your email"> <!-- Trường nhập email -->
+                <textarea name="" id="" cols="30" rows="10" placeholder="Enter your content"></textarea> <!-- Trường nhập nội dung -->
+                <button class="btn-danger">Send</button> <!-- Nút gửi -->
+            </form>
+        </div>
+    </section>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Thư viện jQuery -->
+
+    <!-- Thư viện icon (Ionicons) -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> <!-- Phiên bản module -->
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> <!-- Phiên bản không phải module -->
+
+    <!-- Tệp JavaScript tùy chỉnh -->
+    <script src="./script-jquery.js"></script>
+</body>
+
+</html>

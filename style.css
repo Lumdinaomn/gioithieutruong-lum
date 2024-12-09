@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;500;600;700&display=swap');
+
+
+:root {
+    /* Định nghĩa các biến màu sắc và giá trị mặc định cho giao diện */
+    --bg-color: #c3c2c2; /* Màu nền chính */
+    --danger-color: #4831e0; /* Màu đỏ dùng làm điểm nhấn */
+    --text-color: rgba(255, 255, 255, 0.5); /* Màu văn bản với độ trong suốt */
+    --border-color: rgba(255, 255, 255, 0.5); /* Màu viền với độ trong suốt */
+}
+
+* {
+    /* Đặt mặc định không có padding/margin và đảm bảo box-sizing theo chuẩn border-box */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Kiểu dáng chính của thân trang */
+    min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao màn hình */
+    background: var(--bg-color); /* Màu nền */
+    font-family: "Times New Roman", serif; /* Font chữ chính */
+    cursor: pointer; /* Con trỏ mặc định là dạng pointer */
+}
+
+ul {
+    list-style: none; /* Bỏ kiểu danh sách (chấm, số thứ tự) */
+}
+a {
+    text-decoration: none; /* Bỏ gạch chân mặc định */
+}
+img {
+    max-width: 100%; /* Hình ảnh không vượt quá chiều rộng chứa nó */
+}
+
+.container {
+    max-width: 1280px; /* Chiều rộng tối đa của container */
+    margin: 0px auto; /* Canh giữa container */
+}
+
+header {
+    width: 100%; /* Header chiếm toàn bộ chiều ngang */
+}
+header .container {
+    /* Kiểu dáng đặc biệt cho container trong header */
+    min-height: 735px;
+    background: linear-gradient(0deg, rgba(234, 228, 228, 0), rgba(0, 0, 0, 0.94)),
+        url("./images/nen.jpg"); /* Ảnh nền kết hợp gradient mờ */
+}
+
+nav {
+    /* Thanh điều hướng cố định ở trên cùng */
+    position: fixed;
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between; /* Khoảng cách đều giữa các phần */
+    align-items: center;
+    background: black; /* Màu nền đen */
+    padding: 0px 30px; /* Khoảng cách bên trong */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Đảm bảo nó nằm trên các phần tử khác */
+}
+
+nav .menu {
+    display: flex; /* Menu là hàng ngang */
+    gap: 100px; /* Khoảng cách giữa các mục menu */
+}
+
+nav .menu a {
+    color: #ffffff; /* Màu chữ menu */
+    transition: 0.3s all; /* Hiệu ứng chuyển màu */
+}
+nav .menu .item:hover a {
+    color: rgb(163, 156, 156); /* Màu khi hover mục menu */
+}
+
+nav .open-menu {
+    /* Nút mở menu hiển thị khi màn hình nhỏ */
+    color: #fff;
+    font-size: 35px;
+    display: none; /* Mặc định ẩn */
+}
+
+nav .responsive-menu {
+    /* Menu hiển thị trên màn hình nhỏ */
+    position: absolute;
+    background: rgb(2, 1, 4); /* Màu nền tối */
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    display: none; /* Ẩn mặc định */
+}
+
+nav .responsive-menu .item {
+    height: 70px;
+    text-align: center; /* Căn giữa văn bản */
+}
+nav .responsive-menu a {
+    color: #000000; /* Màu chữ menu */
+    transition: 0.2s all; /* Hiệu ứng chuyển màu */
+}
+nav .responsive-menu .item:hover a {
+    color: rgb(163, 156, 156); /* Màu chữ khi hover */
+}
+
+nav .responsive-menu .close-responsive-menu {
+    /* Nút đóng menu cho màn hình nhỏ */
+    position: absolute;
+    color: #fff;
+    right: 20px;
+    font-size: 25px;
+}
+
+/* Kiểu dáng phần giới thiệu (intro) */
+.intro {
+    padding-top: 100px; /* Khoảng cách phía trên */
+}
+
+.intro .avatar {
+    /* Kiểu dáng cho ảnh đại diện */
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Bo tròn ảnh */
+    border: 10px solid var(--danger-color); /* Viền đỏ */
+    margin: 0px auto; /* Canh giữa */
+    margin-top: 80px;
+}
+
+.intro .avatar:before {
+    /* Hiệu ứng vòng tròn bao quanh ảnh đại diện */
+    content: "";
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid var(--danger-color);
+    border-radius: 50%;
+    animation: anime 2s linear infinite; /* Hoạt ảnh vòng tròn */
+}
+
+@keyframes anime {
+    /* Hoạt ảnh mở rộng và mờ dần */
+    0% {
+        width: 100%;
+        height: 100%;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0; /* Dần biến mất */
+    }
+}
+
+.intro .name {
+    text-align: center; /* Căn giữa tên */
+    color: #ffffff; /* Màu trắng */
+    margin-top: 100px;
+}
+
+.intro .desc {
+    text-align: center; /* Căn giữa mô tả */
+    color: var(--text-color); /* Màu chữ nhạt */
+}
+
+/* Nút dùng chung */
+.btn-danger {
+    background: var(--danger-color); /* Màu nền nút */
+    border-radius: 5px; /* Bo góc nút */
+    width: 155px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff6f6; /* Màu chữ */
+    font-weight: bold;
+    border: none; /* Không viền */
+    outline: none; /* Không viền ngoài khi nhấn */
+}
+
+.intro .btn-danger {
+    margin: 0px auto; /* Canh giữa nút */
+    margin-top: 55px;
+}
+/* class dùng chung */ 
+.section-title {
+    /* Tiêu đề của mỗi phần */
+    text-align: center; /* Canh giữa */
+    margin-top: 62px; /* Khoảng cách phía trên */
+    font-size: 24px; /* Kích thước chữ */
+    color: #000000; /* Màu chữ */
+    font-weight: bold; /* Đậm chữ */
+    position: relative; /* Cần để sử dụng hiệu ứng với `:before` */
+}
+.section-title:before {
+    /* Hiệu ứng gạch dưới khi hover */
+    content: ""; /* Nội dung rỗng */
+    position: absolute;
+    width: 0px; /* Bắt đầu không có chiều rộng */
+    height: 6px; /* Chiều cao thanh */
+    background: var(--danger-color); /* Màu đỏ */
+    bottom: -10px; /* Cách phía dưới tiêu đề */
+    transition: 0.5s all; /* Hiệu ứng mượt */
+}
+
+.section-title:hover:before {
+    width: 570px; /* Gạch dưới mở rộng khi hover */
+}
+
+/* about */
+#about .container {
+    /* Phần "About" */
+    min-height: 400px; /* Chiều cao tối thiểu */
+    padding: 0px 100px; /* Khoảng cách 2 bên */
+}
+#about .desc {
+    /* Đoạn mô tả */
+    color: #000000; /* Màu chữ */
+    margin-top: 30px; /* Khoảng cách phía trên */
+    text-align: center; /* Căn giữa văn bản */
+}
+
+.info {
+    /* Grid chứa thông tin */
+    display: grid; /* Hiển thị dạng lưới */
+    grid-template-columns: repeat(2, 1fr); /* Chia thành 2 cột đều nhau */
+    align-items: center; /* Căn giữa theo trục dọc */
+    margin-top: 40px; /* Khoảng cách phía trên */
+    color: #000000; /* Màu chữ */
+}
+
+.box-right {
+    /* Thông tin ở cột bên phải */
+    display: flex; /* Hiển thị dạng cột dọc */
+    flex-direction: column;
+    gap: 20px; /* Khoảng cách giữa các phần tử */
+    color: #000000; /* Màu chữ */
+    align-items: center; /* Căn giữa theo trục dọc */
+    text-align: center; /* Căn giữa mô tả */
+}
+.box-right span {
+    /* Điểm nhấn màu đỏ cho từ khóa */
+    color: var(--danger-color);
+    text-align: center; /* Căn giữa mô tả */
+}
+
+.box-right .btn-danger {
+    /* Nút trong phần "About" */
+    margin: 0px; /* Không khoảng cách */
+    width: 100px; /* Chiều rộng nút */
+    height: 35px; /* Chiều cao nút */
+    align-items: center; /* Căn giữa theo trục dọc */
+}
+
+/* skills */
+#skills .container {
+    margin-top: 100px; /* Khoảng cách phía trên */
+    min-height: 400px; /* Chiều cao tối thiểu */
+    padding-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+.skill {
+    /* Từng kỹ năng */
+    width: 50%; /* Chiếm 50% chiều rộng */
+    margin: 0px auto; /* Canh giữa */
+    margin-top: 30px; /* Khoảng cách phía trên */
+}
+.skill h3 {
+    /* Tiêu đề kỹ năng */
+    color: #000000; /* Màu chữ */
+}
+
+.skill .process-bar {
+    /* Thanh hiển thị tiến trình */
+    width: 100%; /* Chiếm toàn bộ chiều ngang */
+    height: 15px; /* Chiều cao */
+    border-radius: 20px; /* Bo góc */
+    margin-top: 10px; /* Khoảng cách phía trên */
+    background: #000000; /* Màu nền thanh */
+}
+
+.skill .process {
+    /* Phần tiến trình được lấp đầy */
+    width: 40%; /* Mức độ hoàn thành */
+    height: 100%; /* Chiều cao bằng với thanh chứa */
+    background: var(--danger-color); /* Màu đỏ */
+    border-radius: 20px; /* Bo góc */
+}
+
+/* Cấp độ hoàn thành khác nhau cho từng kỹ năng */
+.skill:nth-child(2) .process {
+    width: 60%;
+}
+.skill:nth-child(3) .process {
+    width: 80%;
+}
+.skill:nth-child(4) .process {
+    width: 100%;
+}
+
+/* projects */
+#projects .container {
+    /* Phần "Projects" */
+    padding: 0px 100px; /* Khoảng cách hai bên */
+}
+
+.projects {
+    /* Lưới chứa dự án */
+    margin-top: 50px; /* Khoảng cách phía trên */
+    display: grid; /* Hiển thị dạng lưới */
+    grid-template-columns: repeat(2, 1fr); /* Chia thành 2 cột */
+    gap: 50px; /* Khoảng cách giữa các mục */
+}
+.projects .item {
+    /* Mỗi dự án */
+    margin-bottom: 30px; /* Khoảng cách phía dưới */
+    color: #000000; /* Màu chữ */
+}
+
+.projects .item .name {
+    /* Tên dự án */
+    margin-top: 20px; /* Khoảng cách phía trên */
+}
+
+.projects .item .desc {
+    /* Mô tả dự án */
+    margin: 10px 0px; /* Khoảng cách trên và dưới */
+    max-width: 90%; /* Chiều rộng tối đa */
+    color: #000000; /* Màu chữ */
+   
+}
+
+.projects .item .btn-danger {
+    /* Nút "See More" */
+    width: 100px; /* Chiều rộng nút */
+    height: 40px; /* Chiều cao nút */
+    margin: 0px; /* Không khoảng cách */
+}
+
+/* contact */
+#contact .container {
+    /* Phần "Contact" */
+    padding: 0px 100px; /* Khoảng cách 2 bên */
+}
+
+.form-contact {
+    /* Form liên hệ */
+    display: flex; /* Hiển thị dạng cột dọc */
+    flex-direction: column;
+    margin-top: 100px; /* Khoảng cách phía trên */
+}
+.form-contact input {
+    /* Input trong form */
+    width: 70%; /* Chiếm 70% chiều rộng */
+    height: 50px; /* Chiều cao input */
+    background: transparent; /* Nền trong suốt */
+    border: none; /* Không viền */
+    outline: none; /* Không đường viền ngoài */
+    border-bottom: 1px solid var(--border-color); /* Viền dưới */
+    margin-bottom: 40px; /* Khoảng cách dưới */
+    color: var(--text-color); /* Màu chữ */
+}
+
+.form-contact textarea {
+    /* Textarea trong form */
+    background: transparent; /* Nền trong suốt */
+    border: 1px solid var(--border-color); /* Viền ngoài */
+    resize: none; /* Không cho thay đổi kích thước */
+    padding: 10px; /* Khoảng cách bên trong */
+    color: var(--text-color); /* Màu chữ */
+    outline: none; /* Không đường viền ngoài */
+}
+.form-contact .btn-danger {
+    /* Nút "Send" */
+    width: 100px; /* Chiều rộng nút */
+    height: 40px; /* Chiều cao nút */
+    margin: 10px 0px; /* Khoảng cách trên và dưới */
+}
